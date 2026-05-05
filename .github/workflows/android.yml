@@ -5,6 +5,10 @@ on:
     branches: [ main, develop ]
   pull_request:
 
+defaults:
+  run:
+    working-directory: androidstartuptemplate   
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,4 +34,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: app-main-debug
-          path: apps/app-main/build/outputs/apk/debug/*.apk
+          path: androidstartuptemplate/apps/app-main/build/outputs/apk/debug/*.apk
